@@ -1,8 +1,0 @@
- 
- {emoji:'🏖️',title:'Tensionado',artist:'Soap Dish',duration:'3:15',desc:'',song:'https://res.cloudinary.com/duodetvuz/video/upload/v1782130700/Soapdish_-_Tensionado_Lyrics_raprg6.mp3'},
-  
-    {emoji:'🎂',title:'Namumula',artist:'Maki',duration:'3:44',desc:'',song:'https://res.cloudinary.com/duodetvuz/video/upload/v1782130698/Namumula_by_Maki_Official_Music_Video_exua8v.mp3'},
-   
-    {emoji:'🌧️',title:'Unti Unti',artist:'Dharma Down',duration:'4:02',desc:'',song:'https://res.cloudinary.com/duodetvuz/video/upload/v1782130698/Unti-unti_-_Up_Dharma_Down_Official_Lyric_Visuals_lmhfbw.mp3'},
-   
-    {emoji:'🌄',title:'Watching the Sunrise',artist:'Our Memory',duration:'6:14',desc:'',song:''},
