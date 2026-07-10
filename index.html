@@ -15,9 +15,9 @@
   --mu:rgba(0,245,255,.45);--mu2:rgba(0,245,255,.22);
   --tx:#d8f8ff;--sb:260px;
 
-  /* ── Aurora dashboard accent colors ── */
-  --p:#b06ef3;   /* purple */
-  --m:#f472b6;   /* magenta */
+  
+  --p:#b06ef3;   
+  --m:#f472b6;   
 }
 html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--tx)}
 body{font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;cursor:none;position:relative}
@@ -26,7 +26,7 @@ button,input,textarea,select{background:transparent;border:none;color:inherit;fo
 button:focus,input:focus,textarea:focus,select:focus{outline:none}
 ::placeholder{color:rgba(216,248,255,.4)}
 
-/* ══ AURORA LAYER (behind everything) ══ */
+
 .aurora-layer{
   position:fixed;inset:0;z-index:-2;pointer-events:none;
   background:
@@ -40,7 +40,7 @@ button:focus,input:focus,textarea:focus,select:focus{outline:none}
 }
 @keyframes aurora-drift{from{transform:translate(-25px,-15px) scale(1)}to{transform:translate(25px,15px) scale(1.04)}}
 
-/* ══ STAR LAYER ══ */
+
 .star-layer{
   position:fixed;inset:0;z-index:-1;pointer-events:none;
   background:
@@ -51,35 +51,35 @@ button:focus,input:focus,textarea:focus,select:focus{outline:none}
 }
 @keyframes star-twinkle{from{opacity:.25}to{opacity:.6}}
 
-/* ══ CUSTOM CURSOR ══ */
+
 #cur{position:fixed;pointer-events:none;z-index:99999;mix-blend-mode:difference}
 #cur-ring{width:32px;height:32px;border:1.5px solid var(--c);border-radius:50%;transform:translate(-50%,-50%);transition:width .15s,height .15s,opacity .15s;opacity:.7}
 #cur-dot{position:fixed;width:5px;height:5px;background:var(--c);border-radius:50%;transform:translate(-50%,-50%);pointer-events:none;z-index:99999;box-shadow:0 0 8px var(--c)}
 #cur-ring.click{width:18px;height:18px;opacity:1;border-color:#fff}
 
-/* ══ SCAN LINES ══ */
+
 .scanlines{position:fixed;inset:0;z-index:1;pointer-events:none;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.04) 2px,rgba(0,0,0,.04) 4px);animation:scan-drift 8s linear infinite}
 @keyframes scan-drift{from{background-position:0 0}to{background-position:0 100px}}
 
-/* ══ PARTICLES CANVAS ══ */
+
 #fx{position:fixed;inset:0;z-index:0;pointer-events:none}
 .particle{position:absolute;width:3px;height:3px;background:#00ffff;border-radius:50%;box-shadow:0 0 10px #00ffff;opacity:.8;pointer-events:none;z-index:2}
 
-/* ══ HUD CORNERS ══ */
+
 .hud{position:absolute;width:14px;height:14px;pointer-events:none}
 .hud::before,.hud::after{content:'';position:absolute;background:var(--c);opacity:.7}
 .hud.tl{top:8px;left:8px}.hud.tl::before{width:100%;height:1.5px;top:0;left:0}.hud.tl::after{width:1.5px;height:100%;top:0;left:0}
 .hud.tr{top:8px;right:8px}.hud.tr::before{width:100%;height:1.5px;top:0;right:0;left:auto}.hud.tr::after{width:1.5px;height:100%;top:0;right:0;left:auto}
 .hud.bl{bottom:8px;left:8px}.hud.bl::before{width:100%;height:1.5px;bottom:0;left:0;top:auto}.hud.bl::after{width:1.5px;height:100%;bottom:0;left:0;top:auto}
 .hud.br{bottom:8px;right:8px}.hud.br::before{width:100%;height:1.5px;bottom:0;right:0;left:auto;top:auto}.hud.br::after{width:1.5px;height:100%;bottom:0;right:0;left:auto;top:auto}
-/* aurora-colored HUD for dashboard cards */
+
 .hud.p::before,.hud.p::after{background:var(--p)}
 .hud.m::before,.hud.m::after{background:var(--m)}
 
 ::-webkit-scrollbar{width:4px}
 ::-webkit-scrollbar-thumb{background:rgba(0,245,255,.18);border-radius:99px}
 
-/* ══ LOADING ══ */
+
 #screen-loading{position:fixed;inset:0;background:#000;z-index:9000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px}
 .ld-rings{position:relative;width:88px;height:88px}
 .ld-ring{position:absolute;inset:0;border-radius:50%;border:1.5px solid transparent}
@@ -95,7 +95,7 @@ button:focus,input:focus,textarea:focus,select:focus{outline:none}
 .ld-lines .cursor{animation:blink .7s step-end infinite;color:var(--c)}
 @keyframes blink{50%{opacity:0}}
 
-/* ══ LANDING ══ */
+
 #screen-landing{position:fixed;inset:0;z-index:8000;display:none;align-items:center;justify-content:center;overflow:hidden}
 .land-bg{position:absolute;inset:0;z-index:0;background-image:url('https://i.pinimg.com/originals/c7/c5/d0/c7c5d0af03e76b1bfe69adf5fcf1cf65.gif');background-size:cover;background-position:center;filter:brightness(.2) saturate(1.5) hue-rotate(170deg);animation:zoom 20s ease-in-out infinite alternate}
 @keyframes zoom{from{transform:scale(1.02)}to{transform:scale(1.08)}}
@@ -129,11 +129,11 @@ button:focus,input:focus,textarea:focus,select:focus{outline:none}
 .land-btn:hover{background:rgba(0,245,255,.07);box-shadow:0 0 40px rgba(0,245,255,.25),inset 0 0 30px rgba(0,245,255,.08);transform:translateY(-2px)}
 .land-btn:hover::before{left:150%}
 
-/* ══ APP SHELL ══ */
+
 #app{display:none;height:100vh;flex-direction:column;position:relative;z-index:3}
 .app-body{display:flex;flex:1;overflow:hidden}
 
-/* ══ SIDEBAR ══ */
+
 .sidebar{width:var(--sb);background:rgba(3,8,14,.95);backdrop-filter:blur(20px);flex-shrink:0;display:flex;flex-direction:column;overflow-y:auto;scrollbar-width:none;border-right:1px solid var(--b2);position:relative}
 .sidebar::after{content:'';position:absolute;top:0;right:0;bottom:0;width:1px;background:linear-gradient(to bottom,transparent 0%,var(--c) 50%,transparent 100%);opacity:.25;pointer-events:none}
 .sb-logo{padding:22px 18px 10px;display:flex;align-items:center;gap:10px}
@@ -158,7 +158,7 @@ button:focus,input:focus,textarea:focus,select:focus{outline:none}
 .sb-pl-name{font-size:12px;font-weight:600;color:inherit;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .sb-pl-count{font-size:10px;color:var(--mu2);margin-top:1px;font-family:'Share Tech Mono',monospace}
 
-/* ══ TOPBAR ══ */
+
 .main{flex:1;overflow-y:auto;background:transparent;scrollbar-width:thin;scrollbar-color:rgba(0,245,255,.15) transparent}
 .topbar{position:sticky;top:0;z-index:20;background:rgba(3,8,14,.95);backdrop-filter:blur(20px);padding:13px 28px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--b2)}
 .tb-left{display:flex;align-items:center;gap:10px}
@@ -177,7 +177,7 @@ button:focus,input:focus,textarea:focus,select:focus{outline:none}
 .page{display:none;padding-bottom:80px}
 .page.active{display:block}
 
-/* ══ HOME HERO ══ */
+
 .home-hero{min-height:340px;display:grid;grid-template-columns:1.4fr 1fr;gap:20px;padding:28px 32px;position:relative;overflow:hidden;align-items:center}
 .home-hero-bg{position:absolute;inset:0;z-index:0;background-image:url('https://i.pinimg.com/originals/c7/c5/d0/c7c5d0af03e76b1bfe69adf5fcf1cf65.gif');background-size:cover;background-position:center;filter:brightness(.18) saturate(1.5) hue-rotate(170deg);animation:zoom 18s ease-in-out infinite alternate}
 .home-hero-grid{position:absolute;inset:0;z-index:1;background-image:linear-gradient(rgba(0,245,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(0,245,255,.025) 1px,transparent 1px);background-size:40px 40px}
@@ -193,7 +193,7 @@ button:focus,input:focus,textarea:focus,select:focus{outline:none}
 .ticker-label{font-family:'Share Tech Mono',monospace;font-size:8px;color:var(--mu2);letter-spacing:2px;text-transform:uppercase}
 .ticker-val{font-family:'Orbitron',monospace;font-size:18px;font-weight:700;color:var(--c);line-height:1;text-shadow:0 0 10px rgba(3, 247, 255, 0.747)}
 
-/* ══ HERO CARDS — AURORA UPGRADE ══ */
+
 .hero-right{position:relative;z-index:3;display:flex;flex-direction:column;gap:14px}
 
 .hero-card{
@@ -205,7 +205,7 @@ button:focus,input:focus,textarea:focus,select:focus{outline:none}
   transition:all .25s;
   transform-style:preserve-3d;
 }
-/* top shimmer line */
+
 .hero-card::before{
   content:'';position:absolute;top:0;left:0;right:0;height:1px;
   background:linear-gradient(to right,transparent,var(--c),transparent);
@@ -217,7 +217,7 @@ button:focus,input:focus,textarea:focus,select:focus{outline:none}
   transform:translateY(-3px) rotateX(.5deg);
 }
 
-/* ── MAIN DASHBOARD CARD: aurora neon border sweep ── */
+
 #main-hero-card{border-color:rgba(176,110,243,.25)}
 #main-hero-card::after{
   content:'';
@@ -237,17 +237,17 @@ button:focus,input:focus,textarea:focus,select:focus{outline:none}
   50%{background-position:100% 50%;opacity:.95}
   100%{background-position:200% 50%;opacity:.4}
 }
-/* extra purple glow on hover */
+
 #main-hero-card:hover{
   border-color:rgba(176,110,243,.4);
   box-shadow:0 0 40px rgba(176,110,243,.15),0 0 20px rgba(244,114,182,.1),0 16px 40px rgba(0,0,0,.5);
 }
 
 .hc-label{font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--c);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:8px;position:relative;z-index:1}
-/* purple label on main card */
+
 #main-hero-card .hc-label{color:var(--p)}
 .hc-val{font-family:'Orbitron',sans-serif;font-size:22px;font-weight:900;color:var(--tx);margin-bottom:4px;position:relative;z-index:1}
-/* glitch pulse on the 98% */
+
 .hc-percent{
   color:var(--p);
   text-shadow:0 0 14px rgba(176,110,243,.6),0 0 30px rgba(176,110,243,.3);
@@ -263,7 +263,7 @@ button:focus,input:focus,textarea:focus,select:focus{outline:none}
 }
 .hc-note{font-size:12px;color:rgba(216,248,255,.4);line-height:1.6;position:relative;z-index:1}
 
-/* rotating quote inside card */
+
 .quote-widget{
   margin-top:14px;padding:12px 14px;
   background:rgba(176,110,243,.07);
@@ -277,7 +277,7 @@ button:focus,input:focus,textarea:focus,select:focus{outline:none}
 }
 .quote-widget.fade-out{opacity:0;transform:translateY(6px)}
 
-/* canvas waveform inside card */
+
 #dash-canvas{
   position:relative;z-index:1;
   width:100%;height:36px;border-radius:8px;
@@ -290,17 +290,17 @@ button:focus,input:focus,textarea:focus,select:focus{outline:none}
 .hc-row span{color:rgba(216,248,255,.55)}
 .hc-row strong{color:var(--c);font-family:'Share Tech Mono',monospace;font-size:13px}
 
-/* live latency counter */
+
 #live-lat{animation:lat-tick .8s ease-in-out infinite alternate}
 @keyframes lat-tick{from{opacity:1}to{opacity:.5}}
 
-/* ══ SECTION ══ */
+
 .sec{padding:24px 32px 0}
 .sec-header{display:flex;align-items:center;gap:14px;margin-bottom:16px}
 .sec-title{font-family:'Orbitron',sans-serif;font-size:11px;font-weight:700;color:var(--c);letter-spacing:3px;text-transform:uppercase}
 .sec-line{flex:1;height:1px;background:linear-gradient(to right,var(--b),transparent)}
 
-/* ══ CARDS ══ */
+
 .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(175px,1fr));gap:16px}
 .card,.playlist-card{background:rgba(10,20,40,.35);backdrop-filter:blur(20px);border:1px solid rgba(0,255,255,.25);border-radius:20px;padding:14px;cursor:none;transition:all .35s ease;position:relative;overflow:hidden;transform-style:preserve-3d;perspective:1000px}
 .card::before,.playlist-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent,rgba(0,245,255,.4),transparent);opacity:0;transition:opacity .22s}
@@ -316,7 +316,7 @@ button:focus,input:focus,textarea:focus,select:focus{outline:none}
 .card-play svg{width:14px;height:14px;fill:#000}
 .card:hover .card-play{opacity:1;transform:translateY(0) scale(1)}
 
-/* ══ PLAYLIST DETAIL ══ */
+
 .pl-hero{padding:32px 32px 24px;display:flex;align-items:flex-end;gap:24px;min-height:230px;position:relative;overflow:hidden}
 .pl-hero-bg{position:absolute;inset:0;z-index:0;background-size:cover;background-position:center;filter:brightness(.15) saturate(1.5) hue-rotate(170deg) blur(4px);transform:scale(1.06)}
 .pl-hero-grid{position:absolute;inset:0;z-index:1;background-image:linear-gradient(rgba(0,245,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(0,245,255,.02) 1px,transparent 1px);background-size:40px 40px}
@@ -337,7 +337,7 @@ button:focus,input:focus,textarea:focus,select:focus{outline:none}
 .btn-icon-sm svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .btn-icon-sm:hover{color:var(--c);border-color:rgba(0,245,255,.3);background:rgba(0,245,255,.06)}
 
-/* ══ TRACK LIST ══ */
+
 .tl-head{padding:8px 32px;display:grid;grid-template-columns:44px 1fr 70px;gap:12px;font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--mu2);letter-spacing:2.5px;text-transform:uppercase;border-bottom:1px solid var(--b2);margin-bottom:4px}
 .tl-row{padding:7px 24px;display:grid;grid-template-columns:44px 1fr 70px;gap:12px;align-items:center;border-radius:8px;cursor:none;transition:all .12s;margin:0 8px}
 .tl-row:hover{background:rgba(0,245,255,.04)}
@@ -351,7 +351,7 @@ button:focus,input:focus,textarea:focus,select:focus{outline:none}
 .tl-artist{font-size:11px;color:var(--mu);margin-top:2px;font-family:'Share Tech Mono',monospace}
 .tl-dur{font-size:11px;color:var(--mu2);text-align:right;font-variant-numeric:tabular-nums;font-family:'Share Tech Mono',monospace}
 
-/* ══ PLAYER BAR ══ */
+
 .player-bar{height:84px;background:rgba(3,8,14,.98);backdrop-filter:blur(28px);border-top:none;display:flex;align-items:center;justify-content:space-between;padding:0 20px;gap:12px;flex-shrink:0;position:relative}
 .player-bar::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent 0%,var(--c) 30%,var(--g) 70%,transparent 100%);opacity:.6;box-shadow:0 0 12px var(--c)}
 .player-bar::after{content:'';position:absolute;top:0;left:0;right:0;height:60px;background:linear-gradient(to bottom,rgba(0,245,255,.03),transparent);pointer-events:none}
@@ -405,7 +405,7 @@ button:focus,input:focus,textarea:focus,select:focus{outline:none}
 .pb-viz.active .pb-viz-bar:nth-child(1){animation-duration:.45s}.pb-viz.active .pb-viz-bar:nth-child(2){animation-duration:.38s}.pb-viz.active .pb-viz-bar:nth-child(3){animation-duration:.52s}.pb-viz.active .pb-viz-bar:nth-child(4){animation-duration:.33s}.pb-viz.active .pb-viz-bar:nth-child(5){animation-duration:.41s}.pb-viz.active .pb-viz-bar:nth-child(6){animation-duration:.36s}.pb-viz.active .pb-viz-bar:nth-child(7){animation-duration:.48s}.pb-viz.active .pb-viz-bar:nth-child(8){animation-duration:.42s}
 @keyframes viz-active{0%,100%{height:4px}50%{height:22px}}
 
-/* ══ NOW PLAYING ══ */
+
 #now-playing{position:fixed;inset:0;z-index:600;display:none;flex-direction:column;align-items:center;justify-content:center;padding:32px 24px}
 #now-playing.open{display:flex}
 .np-bg{position:absolute;inset:0;background:rgba(3,8,14,.97);backdrop-filter:blur(32px)}
@@ -452,7 +452,7 @@ button:focus,input:focus,textarea:focus,select:focus{outline:none}
 .np-ctrl .rp-badge{position:absolute;top:-4px;right:-4px;width:13px;height:13px;border-radius:50%;background:var(--c);color:#000;font-size:7px;font-weight:900;display:none;align-items:center;justify-content:center;border:2px solid var(--bg)}
 .np-ctrl.repeat-one .rp-badge{display:flex}
 
-/* ══ TOAST ══ */
+
 .bg-toast{position:fixed;bottom:96px;left:50%;transform:translateX(-50%) translateY(16px);background:rgba(5,13,21,.96);border:1px solid var(--b);backdrop-filter:blur(16px);border-radius:6px;padding:10px 18px;font-family:'Share Tech Mono',monospace;font-size:11px;color:rgba(0,245,255,.7);letter-spacing:1px;display:flex;align-items:center;gap:8px;opacity:0;transition:all .28s cubic-bezier(.34,1.3,.64,1);pointer-events:none;z-index:700;white-space:nowrap}
 .bg-toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 .bg-toast-dot{width:5px;height:5px;border-radius:50%;background:var(--c);animation:blink 1.5s ease-in-out infinite;box-shadow:0 0 6px var(--c);flex-shrink:0}
@@ -460,7 +460,7 @@ button:focus,input:focus,textarea:focus,select:focus{outline:none}
 .fade-in{animation:fadeup .3s ease}
 svg{display:inline-block;vertical-align:middle}
 
-/* ══ SEARCH MODAL ══ */
+
 .search-modal{position:fixed;inset:0;display:none;z-index:1200;align-items:center;justify-content:center;background:rgba(3,8,14,.6);backdrop-filter:blur(8px)}
 .search-modal.open{display:flex}
 .sm-inner{width:720px;max-width:92%;background:rgba(5,13,21,.95);border:1px solid var(--b);border-radius:12px;padding:18px;box-shadow:0 20px 60px rgba(0,0,0,.7),0 0 30px rgba(0,245,255,.04)}
@@ -548,7 +548,7 @@ svg{display:inline-block;vertical-align:middle}
 </head>
 <body>
 
-<!-- AURORA + STARS -->
+
 <div class="aurora-layer"></div>
 <div class="star-layer"></div>
 
@@ -557,7 +557,7 @@ svg{display:inline-block;vertical-align:middle}
 <div class="scanlines"></div>
 <canvas id="fx"></canvas>
 
-<!-- LOADING -->
+
 <div id="screen-loading">
   <div class="ld-rings">
     <div class="ld-ring"></div><div class="ld-ring"></div><div class="ld-ring"></div>
@@ -570,7 +570,7 @@ svg{display:inline-block;vertical-align:middle}
   </div>
 </div>
 
-<!-- LANDING -->
+
 <div id="screen-landing">
   <div class="land-bg"></div>
   <div class="land-grid"></div>
@@ -593,7 +593,7 @@ svg{display:inline-block;vertical-align:middle}
   </div>
 </div>
 
-<!-- APP -->
+
 <div id="app">
   <div class="app-body">
     <aside class="sidebar">
@@ -666,7 +666,7 @@ svg{display:inline-block;vertical-align:middle}
         </div>
       </div>
 
-      <!-- HOME -->
+      
       <section class="page active" id="page-home">
         <div class="home-hero">
           <div class="home-hero-bg"></div>
@@ -686,20 +686,20 @@ svg{display:inline-block;vertical-align:middle}
             </div>
           </div>
 
-          <!-- RIGHT — aurora dashboard -->
+          
           <div class="hero-right">
-            <!-- MAIN DASHBOARD CARD with all aurora effects -->
+            
             <div class="hero-card" id="main-hero-card">
               <div class="hud tl p"></div><div class="hud tr m"></div><div class="hud bl m"></div><div class="hud br p"></div>
               <div class="hc-label"></div>
               <div class="hc-val">QUOTES</div>
               <div class="hc-note"></div>
-              <!-- rotating quote -->
+              
               <div class="quote-widget" id="quote-widget">Music is the soundtrack of your soul.</div>
-              <!-- mini waveform canvas -->
+              
               <canvas id="dash-canvas"></canvas>
             </div>
-            <!-- FAST ACCESS CARD -->
+            
             <div class="hero-card">
              
               <div class="hc-row"><span>Latency</span><strong id="live-lat">21 ms</strong></div>
@@ -749,7 +749,7 @@ svg{display:inline-block;vertical-align:middle}
         </div>
       </section>
 
-      <!-- PLAYLIST DETAIL -->
+      
       <section class="page" id="page-detail">
         <div class="pl-hero" id="pl-hero">
           <div class="pl-hero-bg" id="pl-hero-bg"></div>
@@ -777,12 +777,12 @@ svg{display:inline-block;vertical-align:middle}
     </main>
   </div>
 
-  <!-- PLAYER BAR -->
+  
   <div class="search-modal" id="search-modal">
     <div class="sm-inner">
       <div class="sm-head">
         <input id="search-input" placeholder="Search songs, artists, descriptions..." oninput="doSearch(this.value)" />
-        <button class="sm-close" onclick="closeSearch()">✕</button>
+        <button class="sm-close" onclick="closeSearch()">âœ•</button>
       </div>
       <div class="sm-results" id="search-results">Type to search your music...</div>
     </div>
@@ -790,7 +790,7 @@ svg{display:inline-block;vertical-align:middle}
 
   <div class="player-bar">
     <div class="pb-left">
-      <div class="pb-thumb" id="pb-thumb" onclick="openNowPlaying()">🎵</div>
+      <div class="pb-thumb" id="pb-thumb" onclick="openNowPlaying()">ðŸŽµ</div>
       <div style="min-width:0;flex:1">
         <div class="pb-track-name" id="pb-name">Select a track</div>
         <div class="pb-track-artist" id="pb-artist">// tap to play</div>
@@ -847,7 +847,7 @@ svg{display:inline-block;vertical-align:middle}
   </div>
 </div>
 
-<!-- NOW PLAYING -->
+
 <div id="now-playing">
   <div class="np-bg" onclick="closeNowPlaying()"></div>
   <div class="np-inner fade-in">
@@ -856,13 +856,13 @@ svg{display:inline-block;vertical-align:middle}
     </button>
     <div class="np-disc-wrap">
       <div class="np-glow" id="np-glow"></div>
-      <div class="np-disc" id="np-disc">🎵</div>
+      <div class="np-disc" id="np-disc">ðŸŽµ</div>
       <div class="np-disc-grooves"></div>
       <div class="np-disc-hole"></div>
     </div>
     <div class="np-pl-label" id="np-pl-label">PLAYLIST</div>
     <div class="np-song" id="np-song">Select a track</div>
-    <div class="np-artist" id="np-artist">—</div>
+    <div class="np-artist" id="np-artist">â€”</div>
     <div class="np-memory"><div class="np-memory-tag">Memory</div><div class="np-memory-desc" id="np-memory-desc">Tap any track to see its memory here.</div></div>
     <div class="np-prog-wrap">
       <span class="np-prog-time" id="np-cur">0:00</span>
@@ -901,7 +901,7 @@ svg{display:inline-block;vertical-align:middle}
 <audio id="audio-engine"></audio>
 
 <script>
-/* ══ CURSOR ══ */
+
 const curRing=document.getElementById('cur-ring'),curDot=document.getElementById('cur-dot');
 let mx=0,my=0,rx=0,ry=0;
 document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;curDot.style.left=mx+'px';curDot.style.top=my+'px'});
@@ -909,7 +909,7 @@ document.addEventListener('mousedown',()=>curRing.classList.add('click'));
 document.addEventListener('mouseup',()=>curRing.classList.remove('click'));
 (function animCur(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;document.getElementById('cur').style.cssText=`left:${rx}px;top:${ry}px;position:fixed;pointer-events:none;z-index:99999`;requestAnimationFrame(animCur)})();
 
-/* ══ PARTICLES ══ */
+
 (function(){
   const c=document.getElementById('fx'),ctx=c.getContext('2d');
   let W,H;
@@ -930,7 +930,7 @@ document.addEventListener('mouseup',()=>curRing.classList.remove('click'));
   draw();
 })();
 
-/* ══ DASHBOARD MINI WAVEFORM (fake animated bars in canvas) ══ */
+
 (function(){
   const canvas=document.getElementById('dash-canvas');
   if(!canvas)return;
@@ -960,7 +960,7 @@ document.addEventListener('mouseup',()=>curRing.classList.remove('click'));
   draw();
 })();
 
-/* ══ 3D TILT on dashboard card ══ */
+
 function initTilt(){
   const card=document.getElementById('main-hero-card');
   if(!card)return;
@@ -973,7 +973,7 @@ function initTilt(){
   card.addEventListener('mouseleave',()=>card.style.transform='');
 }
 
-/* ══ ROTATING QUOTES ══ */
+
 const QUOTES=[
   'The song isn\'t playing again. You simply became the person who finally understood it.',
   'Music is the soundtrack of your soul.',
@@ -997,7 +997,7 @@ function setupQuoteRotator(){
   },4000);
 }
 
-/* ══ LIVE LATENCY TICKER ══ */
+
 function setupLatTicker(){
   const el=document.getElementById('live-lat');
   if(!el)return;
@@ -1006,7 +1006,7 @@ function setupLatTicker(){
   },2000);
 }
 
-/* ══ FLOATING PARTICLES ══ */
+
 function setupFloatingParticles(){
   const count=24;const particles=[];
   for(let i=0;i<count;i++){
@@ -1031,7 +1031,7 @@ function setupFloatingParticles(){
   animate();
 }
 
-/* ══ PLAYLIST CARD TILT ══ */
+
 function setupPlaylistCardTilt(){
   document.querySelectorAll('.playlist-card').forEach(card=>{
     card.addEventListener('mousemove',e=>{
@@ -1044,16 +1044,16 @@ function setupPlaylistCardTilt(){
   });
 }
 
-/* ══ TYPEWRITER ══ */
+
 function typewrite(el,text,speed=45){el.textContent='';let i=0;const t=setInterval(()=>{el.textContent+=text[i++];if(i>=text.length)clearInterval(t)},speed)}
 
-/* ══ PLAYLISTS ══ */
+
 const PLAYLISTS={
   pl1:{name:'Nick Playlist 4 U',desc:'Im bored, and this happened, this is just a few of my fav a have a tons of songs i wanna add but im so fucking lazy.',coverImg:'https://res.cloudinary.com/duodetvuz/image/upload/q_auto/f_auto/v1782130066/Killua_blue_icon_vwfpib.jpg',heroBg:'https://res.cloudinary.com/duodetvuz/image/upload/q_auto/f_auto/v1782130066/Killua_blue_icon_vwfpib.jpg',glowColor:'rgba(0,245,255,.25)',
   tracks:[
     {cover:'https://res.cloudinary.com/duodetvuz/image/upload/v1783590449/I_c_o_n_xjmizx.jpg',title:'The 1975 - About You',artist:'The 1975',duration:'5:27',desc:'Some people leave the room, yet never quite leave the heart.',song:'https://res.cloudinary.com/duodetvuz/video/upload/v1781430155/The_1975_-_About_You_Official_fdz0zi.mp3'},
 
-  {cover:'https://res.cloudinary.com/duodetvuz/image/upload/v1783591316/download_3_enp6pe.jpg',title:'Lifetime',artist:'Ben&Ben',duration:'4:37',desc:'Of all the lives I could have lived, I’d still be grateful ours crossed paths in this one.',song:'https://res.cloudinary.com/duodetvuz/video/upload/v1781430164/Ben_Ben_-_Lifetime_gvbrgq.mp3'},
+  {cover:'https://res.cloudinary.com/duodetvuz/image/upload/v1783591316/download_3_enp6pe.jpg',title:'Lifetime',artist:'Ben&Ben',duration:'4:37',desc:'Of all the lives I could have lived, Iâ€™d still be grateful ours crossed paths in this one.',song:'https://res.cloudinary.com/duodetvuz/video/upload/v1781430164/Ben_Ben_-_Lifetime_gvbrgq.mp3'},
 
   {cover:'https://res.cloudinary.com/duodetvuz/image/upload/v1783591315/__%E0%AD%A8%E0%AD%A7_ot5lqs.jpg',title:'keshi - Soft Spot',artist:'keshi',duration:'3:24',desc:'There will always be a part of me that softens at the thought of you.',song:'https://res.cloudinary.com/duodetvuz/video/upload/q_auto/f_auto/v1781430136/keshi_-_Soft_Spot_csal8i.mp3'},
 
@@ -1065,7 +1065,7 @@ const PLAYLISTS={
 
   {cover:'https://res.cloudinary.com/duodetvuz/image/upload/v1783591314/Blue_neon_star_bgxnmr.jpg',title:'Pink Skies',artist:'LANY',duration:'3:08',desc:'Some memories fade into the distance; yours only grow gentler.',song:'https://res.cloudinary.com/duodetvuz/video/upload/q_auto/f_auto/v1781430134/lany_-_pink_skies_ttsuug.mp3'},
 
-  {cover:'https://res.cloudinary.com/duodetvuz/image/upload/v1783591314/download_4_z7h6tt.jpg',title:'ILYSB (STRIPPED)',artist:'LANY',duration:'3:50',desc:'Love, perhaps, is simply finding joy in someone’s existence.',song:'https://res.cloudinary.com/duodetvuz/video/upload/v1781430164/ILYSB_STRIPPED_qkdylr.mp3'},
+  {cover:'https://res.cloudinary.com/duodetvuz/image/upload/v1783591314/download_4_z7h6tt.jpg',title:'ILYSB (STRIPPED)',artist:'LANY',duration:'3:50',desc:'Love, perhaps, is simply finding joy in someoneâ€™s existence.',song:'https://res.cloudinary.com/duodetvuz/video/upload/v1781430164/ILYSB_STRIPPED_qkdylr.mp3'},
 
   {cover:'https://res.cloudinary.com/duodetvuz/image/upload/v1783591313/download_5_mynbfn.jpg',title:'Super Far',artist:'LANY',duration:'3:27',desc:'Distance has a strange way of revealing what truly matters.',song:'https://res.cloudinary.com/duodetvuz/video/upload/v1781430150/Super_Far_-_Lany_mnnuvt.mp3'},
 
@@ -1079,15 +1079,15 @@ const PLAYLISTS={
 
   {cover:'https://res.cloudinary.com/duodetvuz/image/upload/v1783591312/download_6_bbkay6.jpg',title:'Collide',artist:'Howie Day',duration:'4:10',desc:'If ever the road grows difficult, I hope you remember you were never meant to walk it alone.',song:'https://res.cloudinary.com/duodetvuz/video/upload/v1781430161/Howie_Day_-_Collide_jj8yih.mp3'},
 
-  {cover:'https://res.cloudinary.com/duodetvuz/image/upload/v1783591312/blue_aesthetic_phumhw.jpg',title:'This Town',artist:'Niall Horan',duration:'3:55',desc:'Some people become part of a place long after they’ve gone.',song:'https://res.cloudinary.com/duodetvuz/video/upload/q_auto/f_auto/v1781430137/Niall_Horan_-_This_Town_nq9wdv.mp3'},
+  {cover:'https://res.cloudinary.com/duodetvuz/image/upload/v1783591312/blue_aesthetic_phumhw.jpg',title:'This Town',artist:'Niall Horan',duration:'3:55',desc:'Some people become part of a place long after theyâ€™ve gone.',song:'https://res.cloudinary.com/duodetvuz/video/upload/q_auto/f_auto/v1781430137/Niall_Horan_-_This_Town_nq9wdv.mp3'},
 
   {cover:'https://res.cloudinary.com/duodetvuz/image/upload/v1783591311/download_7_kji5a5.jpg',title:'Coffee',artist:'Miguel',duration:'4:46',desc:'There is an intimacy in ordinary moments shared with the right person.',song:'https://res.cloudinary.com/duodetvuz/video/upload/q_auto/f_auto/v1781439106/Miguel_-_Coffee_Lyrics_r7p7jn.mp3'},
 
-  {cover:'https://res.cloudinary.com/duodetvuz/image/upload/v1783591311/Spideyyyyy_gbifrc.jpg',title:'Borrowed Time',artist:'Cueshe',duration:'4:06',desc:'Even fleeting seasons can leave permanent marks on the soul.',song:'https://res.cloudinary.com/duodetvuz/video/upload/q_auto/f_auto/v1781458077/Cueshé_-_Borrowed_Time_Lyrics_prkm8p.mp3'},
+  {cover:'https://res.cloudinary.com/duodetvuz/image/upload/v1783591311/Spideyyyyy_gbifrc.jpg',title:'Borrowed Time',artist:'Cueshe',duration:'4:06',desc:'Even fleeting seasons can leave permanent marks on the soul.',song:'https://res.cloudinary.com/duodetvuz/video/upload/q_auto/f_auto/v1781458077/CueshÃ©_-_Borrowed_Time_Lyrics_prkm8p.mp3'},
 
   {cover:'https://res.cloudinary.com/duodetvuz/image/upload/v1783591311/download_8_yy7oe6.jpg',title:'Sa Bawat Sandali',artist:'Amiel Sol',duration:'5:05',desc:'I learned that significance is often measured in moments, not years.',song:'https://res.cloudinary.com/duodetvuz/video/upload/q_auto/f_auto/v1781458273/Sa_Bawat_Sandali_-_Amiel_Sol_Visualizer_y1rjen.mp3'},
 
-  {cover:'https://res.cloudinary.com/duodetvuz/image/upload/v1783591311/Gwen_Stacy_Spider-Woman_Ghost_spider_wpnonn.jpg',title:'Falling For You',artist:'The 1975',duration:'4:01',desc:'I noticed the change too late—my heart had already made its decision.',song:'https://res.cloudinary.com/duodetvuz/video/upload/q_auto/f_auto/v1781458417/The_1975_-_fallingforyou_urobm6.mp3'},
+  {cover:'https://res.cloudinary.com/duodetvuz/image/upload/v1783591311/Gwen_Stacy_Spider-Woman_Ghost_spider_wpnonn.jpg',title:'Falling For You',artist:'The 1975',duration:'4:01',desc:'I noticed the change too lateâ€”my heart had already made its decision.',song:'https://res.cloudinary.com/duodetvuz/video/upload/q_auto/f_auto/v1781458417/The_1975_-_fallingforyou_urobm6.mp3'},
 
   {cover:'https://res.cloudinary.com/duodetvuz/image/upload/v1783591311/download_8_yy7oe6.jpg',title:'Fallen',artist:'Lola Amour',duration:'3:21',desc:'You carried a lightness that made admiration feel inevitable.',song:'https://res.cloudinary.com/duodetvuz/video/upload/q_auto/f_auto/v1781458562/Lola_Amour_-_Fallen_Official_Lyric_Video_ndolgn.mp3'},
 
@@ -1095,7 +1095,7 @@ const PLAYLISTS={
 
   {cover:'https://res.cloudinary.com/duodetvuz/image/upload/v1783591310/kitty_in_blue_jzlsq9.jpg',title:'No. 1 Party Anthem',artist:'Arctic Monkeys',duration:'4:03',desc:'In a room full of voices, yours was the one I kept listening for.',song:'https://res.cloudinary.com/duodetvuz/video/upload/q_auto/f_auto/v1781458597/Arctic_Monkeys_-_No._1_Party_Anthem_Lyrics_oxzhpa.mp3'},
 
-  {cover:'https://res.cloudinary.com/duodetvuz/image/upload/v1783591310/download_10_vf1liy.jpg',title:"I'll Be",artist:'Edwin McCain',duration:'4:27',desc:'Whatever becomes of us, I’ll always wish well for the person you are.',song:'https://res.cloudinary.com/duodetvuz/video/upload/q_auto/f_auto/v1781458598/Edwin_McCain_-_I_ll_Be_Lyrics_rr51li.mp3'},
+  {cover:'https://res.cloudinary.com/duodetvuz/image/upload/v1783591310/download_10_vf1liy.jpg',title:"I'll Be",artist:'Edwin McCain',duration:'4:27',desc:'Whatever becomes of us, Iâ€™ll always wish well for the person you are.',song:'https://res.cloudinary.com/duodetvuz/video/upload/q_auto/f_auto/v1781458598/Edwin_McCain_-_I_ll_Be_Lyrics_rr51li.mp3'},
 
   {cover:'https://res.cloudinary.com/duodetvuz/image/upload/v1783591310/wandering_soul__oeygce.jpg',title:'Sino',artist:'Unique Salonga',duration:'4:47',desc:'Of all the possibilities, it was you who altered the shape of my days.',song:'https://res.cloudinary.com/duodetvuz/video/upload/q_auto/f_auto/v1781458599/Unique_Salonga_-_Sino_Official_Music_Video_lylhnw.mp3'},
 
@@ -1132,7 +1132,7 @@ const PLAYLISTS={
 
   {cover:'https://res.cloudinary.com/duodetvuz/image/upload/v1783591305/%D9%8D_tjiimz.jpg',title:'Say Yes To Heaven',artist:'Lana Del Rey',duration:'3:34',desc:'May love arrive gently, and may you never mistake it for anything less than what it is.',song:'https://res.cloudinary.com/duodetvuz/video/upload/q_auto/f_auto/v1781569348/I_ve_got_my_eye_on_you._rynfw7.mp3'},
 
-  {cover:'https://res.cloudinary.com/duodetvuz/image/upload/v1783594150/download_35_bd5poc.jpg',title:'Would’ve Been You',artist:'Sombr',duration:'3:01',desc:'There are stories that stay with us not because they happened, but because they almost did.',song:'https://res.cloudinary.com/duodetvuz/video/upload/q_auto/f_auto/v1781569346/sombr_-_would_ve_been_you_official_video_q2odas.mp3'},
+  {cover:'https://res.cloudinary.com/duodetvuz/image/upload/v1783594150/download_35_bd5poc.jpg',title:'Wouldâ€™ve Been You',artist:'Sombr',duration:'3:01',desc:'There are stories that stay with us not because they happened, but because they almost did.',song:'https://res.cloudinary.com/duodetvuz/video/upload/q_auto/f_auto/v1781569346/sombr_-_would_ve_been_you_official_video_q2odas.mp3'},
 
   {cover:'https://res.cloudinary.com/duodetvuz/image/upload/v1783591304/urban_melody_speed_up_l2b5cz.jpg',title:'Apocalypse',artist:'Cigarettes After Sex',duration:'4:50',desc:'Even if everything was destined to end, I would still choose the moments that led me to you.',song:'https://res.cloudinary.com/duodetvuz/video/upload/q_auto/f_auto/v1781569341/Apocalypse_-_Cigarettes_After_Sex_ydecm7.mp3'},
 
@@ -1165,7 +1165,7 @@ const PLAYLISTS={
   {cover:'https://res.cloudinary.com/duodetvuz/image/upload/v1783661911/download_42_bfokg2.jpg',title:'Her',artist:'JVKE',duration:'2:51',desc:'.',song:'https://res.cloudinary.com/duodetvuz/video/upload/v1783655180/JVKE_-_her_official_lyric_video_hcia2s.mp3'},
   {cover:'https://res.cloudinary.com/duodetvuz/image/upload/v1783662364/Marlboro_s_Blue_nungel.jpg',title:'End of Beginning',artist:'DJO',duration:'2:39',desc:'.',song:'https://res.cloudinary.com/duodetvuz/video/upload/v1783655181/Djo_-_End_Of_Beginning_Lyrics_b2o39s.mp3'},
   {cover:'https://res.cloudinary.com/duodetvuz/image/upload/v1783661910/download_45_etoypv.jpg',title:'This Side of Paradise',artist:'Coyote Theory',duration:'4:01',desc:'.',song:'https://res.cloudinary.com/duodetvuz/video/upload/v1783655175/Coyote_Theory_-_This_Side_of_Paradise_Animated_Music_Video_xn2jp2.mp3'},
-  {cover:'https://res.cloudinary.com/duodetvuz/image/upload/v1783661910/download_44_pd0e7h.jpg',title:'Stay',artist:'Cueshé',duration:'3:57',desc:'.',song:'https://res.cloudinary.com/duodetvuz/video/upload/v1783655176/Cuesh%C3%A9_-_Stay_Lyrics_jv5oez.mp3'},
+  {cover:'https://res.cloudinary.com/duodetvuz/image/upload/v1783661910/download_44_pd0e7h.jpg',title:'Stay',artist:'CueshÃ©',duration:'3:57',desc:'.',song:'https://res.cloudinary.com/duodetvuz/video/upload/v1783655176/Cuesh%C3%A9_-_Stay_Lyrics_jv5oez.mp3'},
   {cover:'https://res.cloudinary.com/duodetvuz/image/upload/v1783662364/Marlboro_s_Blue_nungel.jpg',title:'Birds Of A Feather',artist:'Billie Eilish',duration:'3:50',desc:'.',song:'https://res.cloudinary.com/duodetvuz/video/upload/v1783655176/Billie_Eilish_-_BIRDS_OF_A_FEATHER_Official_Music_Video_dbpxey.mp3'},
   {cover:'https://res.cloudinary.com/duodetvuz/image/upload/v1783661911/Blue_aesthetics___Widgets_u7vaq9.jpg',title:'Muli',artist:'Ace Banzuelo',duration:'4:50',desc:'.',song:'https://res.cloudinary.com/duodetvuz/video/upload/v1783655174/Ace_Banzuelo_-_Muli_Official_Lyric_Video_nsdyct.mp3'},
   {cover:'https://res.cloudinary.com/duodetvuz/image/upload/v1783662364/I_miss_your_Voice_rzotfs.jpg',title:'Kabisado',artist:'IV OF SPADES',duration:'3:28',desc:'.',song:'https://res.cloudinary.com/duodetvuz/video/upload/v1783655175/IV_OF_SPADES_-_Kabisado_Official_Lyric_Video_mgnw7j.mp3'},
@@ -1232,25 +1232,25 @@ const PLAYLISTS={
   ]},
   pl3:{name:'Late Night Vibes',desc:'A quiet soundtrack for the in-between hours.',coverImg:'https://cdn3.emoji.gg/emojis/403546-vaporwave.gif',heroBg:'https://cdn3.emoji.gg/emojis/403546-vaporwave.gif',glowColor:'rgba(147, 51, 234, .25)',
   tracks:[
-    {emoji:'🌙',title:'After Hours',artist:'The Weeknd',duration:'3:50',desc:'The night feels softer when you are thinking of it.',song:''},
-    {emoji:'🛋️',title:'Night Owl',artist:'Galimatias',duration:'4:12',desc:'Slow beats for slow thoughts.',song:''},
-    {emoji:'🎧',title:'Moonlit Drive',artist:'ZHU',duration:'4:28',desc:'A soundtrack for empty streets and bright neon.',song:''},
+    {emoji:'ðŸŒ™',title:'After Hours',artist:'The Weeknd',duration:'3:50',desc:'The night feels softer when you are thinking of it.',song:''},
+    {emoji:'ðŸ›‹ï¸',title:'Night Owl',artist:'Galimatias',duration:'4:12',desc:'Slow beats for slow thoughts.',song:''},
+    {emoji:'ðŸŽ§',title:'Moonlit Drive',artist:'ZHU',duration:'4:28',desc:'A soundtrack for empty streets and bright neon.',song:''},
   ]},
   pl4:{name:'Sunrise Drive',desc:'Morning energy for the road ahead.',coverImg:'https://cdn3.emoji.gg/emojis/474680-sunrise.gif',heroBg:'https://cdn3.emoji.gg/emojis/474680-sunrise.gif',glowColor:'rgba(255, 183, 77, .25)',
   tracks:[
-    {emoji:'🚗',title:'Drive',artist:'The Cars',duration:'3:53',desc:'Windows down, world waking up.',song:''},
-    {emoji:'☀️',title:'Good Morning',artist:'Kanye West',duration:'3:15',desc:'A bright beginning to an open road.',song:''},
-    {emoji:'🌻',title:'Here Comes the Sun',artist:'The Beatles',duration:'3:06',desc:'Every sunrise feels a little warmer with you.',song:''},
+    {emoji:'ðŸš—',title:'Drive',artist:'The Cars',duration:'3:53',desc:'Windows down, world waking up.',song:''},
+    {emoji:'â˜€ï¸',title:'Good Morning',artist:'Kanye West',duration:'3:15',desc:'A bright beginning to an open road.',song:''},
+    {emoji:'ðŸŒ»',title:'Here Comes the Sun',artist:'The Beatles',duration:'3:06',desc:'Every sunrise feels a little warmer with you.',song:''},
   ]},
   pl5:{name:'Chill Recall',desc:'Songs to pause, breathe, and remember.',coverImg:'https://cdn3.emoji.gg/emojis/421478-lofi.gif',heroBg:'https://cdn3.emoji.gg/emojis/421478-lofi.gif',glowColor:'rgba(0, 203, 255, .22)',
   tracks:[
-    {emoji:'📚',title:'Bloom',artist:'The Paper Kites',duration:'4:50',desc:'Gentle sounds for slow afternoons.',song:''},
-    {emoji:'☕',title:'Coffee',artist:'Beabadoobee',duration:'2:45',desc:'Comfort in every note.',song:''},
-    {emoji:'🕯️',title:'Nights',artist:'Frank Ocean',duration:'5:11',desc:'A soft voice in a quiet room.',song:''},
+    {emoji:'ðŸ“š',title:'Bloom',artist:'The Paper Kites',duration:'4:50',desc:'Gentle sounds for slow afternoons.',song:''},
+    {emoji:'â˜•',title:'Coffee',artist:'Beabadoobee',duration:'2:45',desc:'Comfort in every note.',song:''},
+    {emoji:'ðŸ•¯ï¸',title:'Nights',artist:'Frank Ocean',duration:'5:11',desc:'A soft voice in a quiet room.',song:''},
   ]}
 };
 
-/* ══ STATE ══ */
+
 const audio=document.getElementById('audio-engine');
 let curPL=null,curIdx=0,playing=false,liked=false,muted=false,navHist=[];
 let shuffleOn=false,repeatMode=0,shuffleQueue=[],shufflePos=0;
@@ -1276,7 +1276,7 @@ function setProgress(pct,cur){
 function setTotalTime(t){document.getElementById('pb-tot').textContent=fmt(t);document.getElementById('np-tot').textContent=fmt(t)}
 function fmt(s){if(!s||isNaN(s))return'0:00';const m=Math.floor(s/60),sec=Math.floor(s%60);return m+':'+(sec<10?'0':'')+sec}
 
-/* ══ INIT ══ */
+
 window.addEventListener('DOMContentLoaded',()=>{
   setTimeout(()=>{
     document.getElementById('screen-loading').style.display='none';
@@ -1336,7 +1336,7 @@ function doSearch(q){
   const results=[];
   Object.keys(PLAYLISTS).forEach(plKey=>{PLAYLISTS[plKey].tracks.forEach((t,i)=>{const hay=(t.title+' '+t.artist+' '+(t.desc||'')).toLowerCase();if(hay.indexOf(qv)!==-1)results.push({pl:plKey,idx:i,track:t})})});
   if(!results.length){out.innerHTML=`<div style="color:var(--mu);padding:12px">No results for "${q}"</div>`;return}
-  out.innerHTML=results.map(r=>`<div class="sm-row" onclick="openPLAndPlay('${r.pl}',${r.idx})"><div class="sm-thumb">${r.track.emoji}</div><div class="sm-meta"><div class="sm-title">${r.track.title}</div><div class="sm-sub">${r.track.artist} · ${PLAYLISTS[r.pl].name} · ${r.track.duration}</div></div></div>`).join('');
+  out.innerHTML=results.map(r=>`<div class="sm-row" onclick="openPLAndPlay('${r.pl}',${r.idx})"><div class="sm-thumb">${r.track.emoji}</div><div class="sm-meta"><div class="sm-title">${r.track.title}</div><div class="sm-sub">${r.track.artist} Â· ${PLAYLISTS[r.pl].name} Â· ${r.track.duration}</div></div></div>`).join('');
 }
 function openPLAndPlay(plKey,idx){closeSearch();openPL(plKey);setTimeout(()=>playTrack(idx),80)}
 
@@ -1355,10 +1355,10 @@ function renderTracks(){
   const pl=PLAYLISTS[curPL];
   document.getElementById('track-list').innerHTML=pl.tracks.map((t,i)=>`
     <div class="tl-row ${i===curIdx&&playing?'now':''}" onclick="playTrack(${i})">
-      <div class="tl-num">${i===curIdx&&playing?'♫':String(i+1).padStart(2,'0')}</div>
+      <div class="tl-num">${i===curIdx&&playing?'â™«':String(i+1).padStart(2,'0')}</div>
       <div class="tl-info">
         <div class="tl-thumb">${t.cover?`<img src="${t.cover}" alt="">`:t.emoji}</div>
-        <div><div class="tl-name">${t.title}</div><div class="tl-artist">${t.artist}${!t.song?' <span style="font-size:10px;color:var(--mu2)">· NO FILE</span>':''}</div></div>
+        <div><div class="tl-name">${t.title}</div><div class="tl-artist">${t.artist}${!t.song?' <span style="font-size:10px;color:var(--mu2)">Â· NO FILE</span>':''}</div></div>
       </div>
       <div class="tl-dur">${t.duration}</div>
     </div>`).join('');
@@ -1370,7 +1370,7 @@ function playTrack(idx){
   else{audio.pause();audio.src='';playing=false;setProgress(0,0);document.getElementById('pb-tot').textContent=t.duration;document.getElementById('np-tot').textContent=t.duration;}
   document.getElementById('pb-thumb').innerHTML = t.cover?`<img src="${t.cover}" alt="">`:t.emoji;
   document.getElementById('pb-name').textContent=t.title;
-  document.getElementById('pb-artist').textContent=t.artist+' · '+pl.name;
+  document.getElementById('pb-artist').textContent=t.artist+' Â· '+pl.name;
   document.getElementById('np-disc').innerHTML = t.cover?`<img src="${t.cover}" alt="">`:t.emoji;
   document.querySelector('.np-disc-grooves').style.display = t.cover ? 'none' : '';
   document.querySelector('.np-disc-hole').style.display = t.cover ? 'none' : '';
