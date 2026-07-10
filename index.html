@@ -544,6 +544,71 @@ svg{display:inline-block;vertical-align:middle}
   .sm-head input{padding:10px 12px;font-size:12px}
   .sm-results{max-height:300px}
 }
+
+@media (max-width:520px){
+  .aurora-layer,.star-layer,.scanlines,#fx{display:none}
+  html,body{height:auto}
+  body{background:var(--bg)}
+  .topbar{padding:10px 12px;flex-wrap:wrap;gap:8px}
+  .tb-left{order:1;width:100%;display:flex;align-items:center;justify-content:space-between;gap:8px}
+  .tb-right{order:2;width:100%;justify-content:flex-end;gap:8px}
+  .tb-title{font-size:10px;letter-spacing:1px}
+  .tb-search{padding:8px 10px;min-width:0;flex:1;justify-content:center}
+  .tb-search svg{width:14px;height:14px}
+  .tb-search-text{display:none}
+  .tb-status{display:none}
+  .tb-av{width:28px;height:28px}
+  .home-hero{grid-template-columns:1fr;padding:14px 12px;gap:12px;min-height:auto}
+  .home-media{height:140px}
+  .home-tag{font-size:8px;letter-spacing:2px}
+  .home-h1{font-size:26px;line-height:1.05}
+  .home-sub{font-size:9px;margin-bottom:12px}
+  .hero-ticker{flex-direction:column;align-items:flex-start;gap:8px}
+  .ticker-item{gap:4px}
+  .ticker-label{font-size:7px;letter-spacing:1.8px}
+  .ticker-val{font-size:12px}
+  .hero-right{display:none}
+  .sec{padding:14px 12px 0}
+  .cards{grid-template-columns:1fr;gap:10px}
+  .card,.playlist-card{padding:10px;border-radius:14px}
+  .card-thumb{aspect-ratio:1.1}
+  .card-name{font-size:12px}
+  .card-sub{font-size:10px;line-height:1.4}
+  .pl-hero{padding:16px 12px;gap:10px;align-items:flex-start}
+  .pl-cover-wrap{width:84px;height:84px}
+  .pl-name{font-size:18px}
+  .pl-desc{font-size:11px}
+  .pl-actions{padding:10px;gap:8px}
+  .btn-play-big{height:36px;padding:0 16px;font-size:8px;letter-spacing:1.4px}
+  .btn-icon-sm{width:32px;height:32px}
+  .tl-row{grid-template-columns:28px 1fr auto;gap:6px;padding:8px 8px;margin:0 2px}
+  .tl-thumb{width:30px;height:30px}
+  .tl-name{font-size:11px}
+  .tl-artist{font-size:9px}
+  .tl-dur{font-size:9px}
+  .player-bar{padding:10px 12px;gap:6px;align-items:flex-start}
+  .pb-left{width:100%;gap:10px}
+  .pb-center{width:100%;gap:8px}
+  .pb-btns{flex-wrap:wrap;gap:6px;justify-content:flex-start}
+  .pb-progress{flex-direction:column;align-items:stretch;gap:8px}
+  .pb-bar-wrap{height:4px}
+  .pb-bar-wrap:hover{height:4px}
+  .pb-time{display:none}
+  .pb-track-name{font-size:11px}
+  .pb-track-artist{font-size:8px}
+  .pb-pp{width:34px;height:34px}
+  .pb-skip{width:30px;height:30px}
+  .pb-heart{display:none}
+  .sm-inner{width:100%;max-width:100%;border-radius:0;box-shadow:none}
+  .sm-head{flex-direction:column;align-items:stretch;gap:8px}
+  .sm-close{width:100%}
+  .sm-results{max-height:260px}
+  #now-playing .np-inner{max-width:320px;padding:16px}
+  .np-disc-wrap{width:180px;height:180px;margin-bottom:20px}
+  .np-song{font-size:18px}
+  .np-artist{font-size:11px}
+  .bg-toast{bottom:78px;left:16px;transform:none;right:16px;width:auto;white-space:normal}
+}
 </style>
 </head>
 <body>
@@ -659,7 +724,7 @@ svg{display:inline-block;vertical-align:middle}
         <div class="tb-right">
           <button class="tb-search" type="button" onclick="openSearch()">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="17.5" y1="17.5" x2="21" y2="21"/></svg>
-            Search
+            <span class="tb-search-text">Search</span>
           </button>
           <div class="tb-status"><div class="tb-dot"></div>ONLINE</div>
           <div class="tb-av"><img src="https://cdn3.emoji.gg/emojis/388298-catgirl.gif" alt="Nick POGI"></div>
